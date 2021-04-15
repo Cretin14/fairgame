@@ -1,4 +1,4 @@
-# FairGame
+# FairGame README
 
 # Table of Contents:
 * [About FairGame](#About-FairGame)
@@ -31,7 +31,8 @@
     
 
 # Quick Links
- [Discord](https://discord.gg/4rfbNKrmnC) | [Python Download (3.8.8)](https://www.python.org/downloads/release/python-388/)
+ * [Discord](https://discord.gg/4rfbNKrmnC) **DO NOT ASK QUESTIONS IN DISCORD BEFORE READING THIS DOCUMENT**
+ * [Python Download (3.8.8)](https://www.python.org/downloads/release/python-388/)
 
 # About FairGame
 
@@ -83,12 +84,24 @@ dependencies in other operating systems:
 2. Install Python 3.8.5, 3.8.6, 3.8.7 or 3.8.8. Install to some location that does not include spaces in the path 
    (we suggest C:\Python38). Click the checkbox that says Add Python 3.8 to PATH (or something similar) 
    during the installation.
+   
+   ![Add Python 3.8 to PATH](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/PythonInstalltoPath.png)
+   
 3. Download GitHub Desktop and Open the FairGame Repository with GitHub Desktop (or download the zip file). 
    Again, make sure this installs to a location without spaces in the path. If you need help with this, look at Wiki.
 4. Open the FairGame folder in File Explorer. Double click __INSTALL (RUN FIRST).bat ***DON'T USE ADMINISTRATIVE MODE***.
+   
+   ![Run Install RUN FIRST.bat](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/Step4.png)
+   
 5. After this finishes (it could take a few minutes or longer), open the `config` folder in the FairGame folder, make 
    a copy of the amazon_config.template_json file and rename it to amazon_config.json. If you don't know how to rename
    file extensions, look it up on [Google](https://www.google.com/search?q=how+do+I+rename+file+extensions+in+Windows).
+   
+   ![Config Folder](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/step5a.png)
+   
+   **Ignore extra files in this folder. Screenshot is based on development files. Just follow instructions as written!**
+   ![Copy template](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/Step5b.png)
+   
 6. Edit the amazon_config.json, this assumes US using smile.amazon.com. Using Amazon Smile requires that you select
    a charity. If you do not know how to do this, use 
    [Google](https://www.google.com/search?q=how+do+i+select+a+charity+on+amazon+smile). 
@@ -105,23 +118,34 @@ dependencies in other operating systems:
   "amazon_website": "smile.amazon.com"
 }
 ```
+   
+   ![Edit config file](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/Step6.png)
+   
 7. In File Explorer, double click the `_Amazon.bat` file in the FairGame folder. ***DON'T USE ADMINISTRATIVE MODE***. 
    Type in your amazon email address when asked for your amazon login ID. Type in your amazon account password when 
    asked for your amazon password. Type in a password for your credentials (this can be whatever you want, it just 
    encrypts your account email/password file)
+   
+   ![Run Amazon.bat](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/Step7.png)
+   
 8. Verify that the bot successfully makes it to the place your order page with the item you put in the config file. 
    If it does not, then:
    * You messed something up above, and need to fix it; or,
-   * It is asking you for your address and payment info. In a separate tab within the bots browser, you need to:
-     * Make sure one-click purchasing is set up for your account in the bot's browser, 
-     * verify there is a default payment method and default address associated with that payment method,
-     * And then make a purchase manually with the bot in a separate tab and verify that it correctly sets your 
-       defaults for the browser. 
+   * If it is asking you for your address and payment info, you need to do all of the following in a separate
+     tab within the bots browser:
+     * Make sure one-click purchasing is set up for your account, 
+     * Verify there is a default payment method and default address associated with that payment method,
+     * And then make a purchase manually in that separate tab of the bot's browser and verify that it 
+       correctly sets your defaults for the browser. 
      * See [#faq on our Discord](https://discord.gg/GEsarYKMAw) for additional information.
+     * ALSO see notes regarding EU and [current functionality](#Other-Notes-on-Functionality)
 9. Edit the `amazon_config.json` file with the item(s) you want to look for. See [Configuration](#Configuration) 
    and [Configuration Examples](#Configuration-Examples) for additional information
-11. Remove `--test` from `_Amazon.bat`
-12. Run `_Amazon.bat` and wait
+10. Remove `--test` from `_Amazon.bat`
+   
+   ![Remove Test](https://github.com/Hari-Nagarajan/fairgame/blob/master/docs/images/Step10.png)
+   
+11. Run `_Amazon.bat` and wait
 
 
 Additional information about running FairGame can be found in the rest of the documentation.
@@ -356,7 +380,7 @@ Credential file password: <enter the previously created password>
 ## Other Installation Help
 
 ### ASINs
-See (#asins)[https://discord.gg/DuVXAN5FnN] channel on our Discord server, or look them up on Amazon.
+See [#asins](https://discord.gg/DuVXAN5FnN) channel on our Discord server, or look them up on Amazon.
 
 ### Platform Specific
 
@@ -432,10 +456,10 @@ Edit the newly created files with your settings based on your [configuration](#c
 
 #### Installation Raspberry Pi 4 (2 GB+)
 
-This is an abridged version of the community created document by UnidentifiedWarlock and Judarius.  It can be 
-found [here](https://docs.google.com/document/d/1VUxXhATZ8sZOJxdh3AIY6OGqwLRmrAcPikKZAwphIE8/edit). If the steps here
-don't work on your Pi 4, look there for additional options. This hasn't been tested on a Pi 3, but given enough RAM to
-run Chrome, it may very well work. Let us know. 
+This is an abridged version of the community created document by UnidentifiedWarlock and Judarius (link to this
+document can be found at end of this section, however you should **follow the README directions first!**). If the 
+README steps don't work on your Pi 4, look at that document for additional options. This hasn't been tested
+on a Pi 3, but given enough RAM to run Chrome, it may very well work. Let us know. 
 
 ```shell
 sudo apt update
@@ -482,6 +506,8 @@ to
 Then save and close the file.
 
 Back in the terminal you kept open, under the fairgame folder you can now type `pipenv run python app.py amazon` and run the bot, or add any flags after you wish to use like `--headless` or `--delay x` to make `pipenv run python app.py amazon --headless --delay 4`
+
+Basis for the above directions can be found [here](https://docs.google.com/document/d/1VUxXhATZ8sZOJxdh3AIY6OGqwLRmrAcPikKZAwphIE8/edit)
 
 # Advanced Configuration 
 ## Notifications
@@ -580,7 +606,7 @@ set PIPENV_VENV_IN_PROJECT=1 (Windows)
 export PIPENV_VENV_IN_PROJECT=1 (Linux/Other)
 ```
 
-* Running the bot minimized can cause time out errors due to how Selenium acts with various versions of Chrome. 
+* Running the bot's Chrome browser minimized can cause time out errors due to how Selenium acts with various versions of Chrome. 
 
 * One time passcode (OTP) doesn't work in headless. Turn it off when starting up a headless instance, then turn 
   it back on afterwords.
@@ -619,7 +645,7 @@ To keep up with questions, the Discord channel [#FAQ](https://discord.gg/GEsarYK
 answers. If you don't find it there, ask in #tech-support. 
 
 1. **Can I run multiple instances of the bot?**
-   While possible, running multiple instances is not supported.
+   It is possible, however we do not support running multiple instances nor any issues that may be encountered while doing so.
 
 2. **Does Fairgame automatically bypass CAPTCHA's on the store sites?**
    The bot will try and auto-solve CAPTCHA's during the checkout process.
